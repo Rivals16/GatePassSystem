@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Alex+Brush|Roboto&display=swap" rel="stylesheet">
+
+
+
+<div class="container">
+    <h4 class="text-center">
+        Welcome to Add Event Page.
+    </h4>
+    <form class="form-horizontal" method="POST" action="/addevent">
+
+        <div class="form-group">
+            <label for="inputEvent" class="col-sm-2 control-label">Event Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="inputEvent" placeholder="Event Name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+
+    </form>
+    <h5 class="text-center">
+        <p>{{ message[0] }}</p>
+    </h5>
+</div>
+
+
+
+{% endblock %}

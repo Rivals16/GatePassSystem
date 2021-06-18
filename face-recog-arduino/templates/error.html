@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Alex+Brush|Roboto&display=swap" rel="stylesheet">
+
+
+
+<div class="container">
+    <h4 class="text-center">
+        <p>{{ message[0] }}</p>
+
+        <p>{{ message[2] }}</p>
+
+        <p>{{ message[1] }}</p>
+        <p>Redirecting to HomePage...</p>
+    </h4>
+</div>
+<script>
+    setTimeout(function() {
+        window.location.href = '/'
+    }, 5000)
+</script>
+
+
+{% endblock %}

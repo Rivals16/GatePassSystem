@@ -1,0 +1,24 @@
+{% extends "layout.html"%} {% block content %}
+
+<div class='container'>
+    <form method='POST'>
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.email.label('Email:') }} {% if form.email.errors %} {{ form.email(class = 'form-control form-control lg is-invalid') }}
+            <div class="invalid-feedback" style='color: red;'>
+                {% for error in form.email.errors %} {{ error }} {% endfor %}
+            </div>
+            {% else %} {{ form.email(class = 'form-control form-control lg ') }} {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.password.label('Password:') }} {{ form.password(class = 'form-control form-control lg ') }}
+        </div>
+        <div class="form-group">
+            {{ form.remember() }} {{ form.remember.label('Remember me')}}
+        </div>
+        {{ form.login(class='btn btn-primary') }} <a href="{{ url_for('reset_password')}}"> Forgot password? </a>
+
+    </form>
+</div>
+
+{% endblock content %}
